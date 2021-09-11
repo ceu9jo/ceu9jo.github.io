@@ -1,0 +1,84 @@
+baseURL       = "http://example.org/"
+languageCode  = "en-us"
+title         = "Roxo | Creative Design Agency"
+theme         = "roxo"
+summarylength = 25
+
+# Site Menus
+[menu]
+  # Navbar Menus
+  [[menu.nav]]
+    name    = "Home"
+    url     = ""
+    weight  = 1
+  [[menu.nav]]
+    name    = "Data source"
+    url     = "source"
+    weight  = 2
+  [[menu.nav]]
+    name    = "Contact"
+    url     = "contact"
+    weight  = 3 
+  [[menu.nav]]
+    name    = "Action"
+    url     = "action"
+    weight  = 4
+
+# Site Params
+[params]
+  logo = "images/logo.png"
+  dateFormat = "26 FEB 1994"
+  # Meta data
+  description = "Roxo Hugo themes | Design Agency Template by StaticMania"
+  author = "StaticMania"
+  # Google Analitycs
+  googleAnalitycsID = "Your ID"
+  # We're using formspree.io for form handling, paste your formspree url below
+  formspreeFormUrl  = "https://formspree.io/myykjpje"
+
+  # Contact Form
+  [params.contactForm]
+    placeholder_first_name        = "First Name"
+    placeholder_last_name         = "Last Name"
+    placeholder_email             = "Email"
+    placeholder_project_type      = "Project Type"
+    placeholder_about_the_project = "About the Project"
+    send_message                  = "Send Message"
+
+    [[params.contactForm.projectType]]
+      value = "gd"
+      title  = "Graphics Design"
+    [[params.contactForm.projectType]]
+      value = "wd"
+      title  = "Web Design"
+  
+  # Navbar Action Button
+  [params.navAction]
+    status  = true
+    name    = "Get in touch"
+    url     = "contact"
+  
+
+  [params.footer]
+    # Footer Contact Info
+    [params.footer.contactInfo]
+      title   = "Contact Info"
+      address = "713 Elmwood St.<br>Prior Lake, MN 55372"
+      phone   = "409-896-1444"
+      email   = "info@roxo.co"
+      # Footer Sitemap
+      [params.footer.sitemap]
+        title   = "Sitemap"
+        [[params.footer.sitemap.link]]
+          name = "Home"
+          url  = ""
+        [[params.footer.sitemap.link]]
+          name = "Data Source"
+          url  = "portfolio"
+        [[params.footer.sitemap.link]]
+          name = "Contact"
+          url  = "contact"
+        [[params.footer.sitemap.link]]
+          name = "Action"
+          url  = "acton"
+

@@ -1,0 +1,22 @@
+---
+title         : "Data source"
+date          : 2019-12-23T20:17:01+06:00
+heading       : "Don’t be shy. Say <span>Hello.</span>"
+form_heading  : "TELL US ABOUT YOUR PROJECT"
+---
+
+##### 世界における日本のジェンダー順位
+
+Global Gender Gap Report  
+https://jp.weforum.org/reports/ab6795a1-960c-42b2-b3d5-587eccda6023
+
+##### 年収分布の男女格差
+
+e-stat 政府統計ポータルサイト  
+https://www.e-stat.go.jp/dbview?sid=0003222466
+
+##### 衆議院議席数
+
+届出政党等別男女別新前元別当選人数（小選挙区、比例代表）  
+https://www.soumu.go.jp/senkyo/senkyo_s/data/shugiin48/index.html
+

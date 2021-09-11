@@ -1,0 +1,38 @@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <canvas id="myChart" style="position: relative; height: 300px; max-width:800px; margin:auto; margin-top:100px;"></canvas>
+    <script>
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var element = document.getElementById("myChart")
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ["2006", "2017", "2018", "2020", "2021"],
+            datasets: [{
+                label: '日本のジェンダー順位（政治）',
+                data: [-83, -123, -125, -144, -147],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.0)'
+                ],
+                borderColor: [
+                    'rgba(255,99,132,1)'
+                ],
+                borderWidth: 1,
+                lineTension: 0
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true,
+                        callback: function(value, index, values) {
+                            return -1 * value;
+                        }
+                    }
+                }]
+            },
+        }
+    });
+    </script>
+

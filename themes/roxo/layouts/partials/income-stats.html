@@ -1,0 +1,83 @@
+  <canvas id="incomeChart" style="position: relative; height: 1200px; max-width:800px; margin:auto;"></canvas>
+  <script>
+  var itx = document.getElementById("incomeChart").getContext("2d");
+
+  var data = {
+      // labels: ["1000万円-", "900万~1000万円", "800万~900万円", "700万~800万円", "600万~700万円", "500万~600万円", "400万~500万円", "300万~400万円", "200万~300万円", "100万~200万円", "~100万円"],
+      labels: ["1000万円-", "900万~1000万円", "800万~900万円", "700万~800万円", "600万~700万円", "500万~600万円", "400万~500万円", "300万~400万円", "200万~300万円", "100万~200万円", "~100万円"],
+      datasets: [
+          {
+              label: "年収分布(人数)-女性",
+              backgroundColor: 'rgba(255, 99, 132, 1.0)',
+              data: [307000, 126800,275500,584500,1024300,1747100,3170900,5781500,11079500,14305500,13828400]
+          },
+          {
+              label: "年収分布(人数)-男性",
+              backgroundColor: 'rgba(132, 99, 255, 1.0)',
+              data: [3628500,1527800,2405300,3746000,4823400,6752900,8935200,10767000,10953000,6204400,4146700]
+          },
+
+      ]
+  };
+
+  var myBarChart = new Chart(itx, {
+      type: 'horizontalBar',
+      data: data,
+      options: {
+          barValueSpacing: 20,
+          layout: {
+              padding: {
+                  left: 5,
+                  right: 40
+              }
+          },
+          scales: {
+              yAxes: [
+                  {
+                      display: true,
+                      position: 'left',
+                      align: 'start',
+                      ticks: {
+                          min: 0,
+                          fontSize:10,
+                          padding:0
+                      }
+                  }
+              ],
+              xAxes: [
+                  {
+                      display: true,
+                      position: 'top',
+                      ticks: {
+                          min: 0,
+                          callback: function(value, index, values) {
+                              var people10k = value * 0.0001;
+                              return people10k + "万人" ;
+                          }
+                     }
+                  }
+              ]
+          },
+          plugins: {
+              datalabels: {
+                  backgroundColor:'rgba(120,99,132,0.5)',
+                  borderRadius: 4,
+                  color: 'white',
+                  font: {
+                      weight: 'bold',
+                      size:10
+                  },
+                  formatter: function(value){
+                      var people10k = Math.round(value * 0.0001);
+                      return people10k + "万人" ;
+                  },
+                  padding:1,
+                  anchor: 'end',
+                  clamp: true,
+                  align: 'end'
+              }
+          }
+      }
+  });
+  </script>
+
