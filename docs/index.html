@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8" />
+  <title>Roxo | Creative Design Agency</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  
+  <meta name="author" content="StaticMania">
+  
+  <meta name="generator" content="Hugo 0.84.0" />
+
+  <!-- Bootstrap -->
+  
+  <link rel="stylesheet" href="http://example.org/css/bootstrap.min.css" />
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="http://example.org/font-awesome/css/font-awesome.min.css" />
+  <!-- Main Stylesheets -->
+  
+  <link href="http://example.org/scss/style.min.css" rel="stylesheet" />
+
+  
+  <link rel="shortcut icon" href="http://example.org/images/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="http://example.org/images/favicon.ico" type="image/x-icon" />
+</head><body><nav class="navbar navbar-expand-lg site-navigation">
+  <div class="container">
+    <a class="navbar-brand" href="http://example.org/">
+      <img src="http://example.org/images/logo.png" alt="logo"/>
+    </a>
+    <button
+      class="navbar-toggler collapsed"
+      type="button"
+      data-toggle="collapse"
+      data-target="#sitenavbar"
+    >
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="sitenavbar">
+      <ul class="navbar-nav ml-auto main-nav">
+         
+         
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="http://example.org/"
+              >Home</a
+            >
+          </li>
+           
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="http://example.org/source"
+              >Data source</a
+            >
+          </li>
+           
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="http://example.org/contact"
+              >Contact</a
+            >
+          </li>
+           
+         
+          
+          <li class="nav-item">
+            <a
+              class="nav-link btn btn-sm btn-primary btn-sm-rounded"
+              href="http://example.org/action"
+            >
+              <span class="btn-area">
+                <span data-text="Action">
+                  Action
+                </span>
+              </span>
+            </a>
+          </li>
+           
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+<main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>    
+
+<canvas id="myChart" style="position: relative; height: 300px; max-width:800px; margin:auto; margin-top:100px;"></canvas>
+    <script>
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var element = document.getElementById("myChart")
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["2006", "2017", "2018", "2020", "2021"],
+            datasets: [{
+                type: 'line',
+                label: '世界における日本のジェンダー順位（政治）',
+                data: [-83, -123, -125, -144, -147],
+                backgroundColor: 'rgba(255, 99, 132, 0.0)',
+                borderColor: 'rgba(255,99,132,1)',
+                borderWidth: 1,
+                lineTension: 0
+            }]
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true,
+                        callback: function(value, index, values) {
+                            return -1 * value;
+                        }
+                    }
+                }]
+            },
+            plugins: {
+                datalabels: {
+                    backgroundColor:'rgba(255,99,132,1.0)',
+                    borderRadius: 4,
+                    color: 'white',
+                    font: {
+                        weight: 'bold'
+                    },
+                    formatter: function(value){
+                        return value * -1;
+                    },
+                    padding: 6
+                }
+            }
+        }
+    });
+    </script>
+
+
+  <canvas id="incomeChart" style="position: relative; height: 1200px; max-width:800px; margin:auto;"></canvas>
+  <script>
+  var itx = document.getElementById("incomeChart").getContext("2d");
+
+  var data = {
+      
+      labels: ["1000万円-", "900万~1000万円", "800万~900万円", "700万~800万円", "600万~700万円", "500万~600万円", "400万~500万円", "300万~400万円", "200万~300万円", "100万~200万円", "~100万円"],
+      datasets: [
+          {
+              label: "年収分布(人数)-女性",
+              backgroundColor: 'rgba(255, 99, 132, 1.0)',
+              data: [307000, 126800,275500,584500,1024300,1747100,3170900,5781500,11079500,14305500,13828400]
+          },
+          {
+              label: "年収分布(人数)-男性",
+              backgroundColor: 'rgba(132, 99, 255, 1.0)',
+              data: [3628500,1527800,2405300,3746000,4823400,6752900,8935200,10767000,10953000,6204400,4146700]
+          },
+
+      ]
+  };
+
+  var myBarChart = new Chart(itx, {
+      type: 'horizontalBar',
+      data: data,
+      options: {
+          barValueSpacing: 20,
+          layout: {
+              padding: {
+                  left: 5,
+                  right: 40
+              }
+          },
+          scales: {
+              yAxes: [
+                  {
+                      display: true,
+                      position: 'left',
+                      align: 'start',
+                      ticks: {
+                          min: 0,
+                          fontSize:10,
+                          padding:0
+                      }
+                  }
+              ],
+              xAxes: [
+                  {
+                      display: true,
+                      position: 'top',
+                      ticks: {
+                          min: 0,
+                          callback: function(value, index, values) {
+                              var people10k = value * 0.0001;
+                              return people10k + "万人" ;
+                          }
+                     }
+                  }
+              ]
+          },
+          plugins: {
+              datalabels: {
+                  backgroundColor:'rgba(120,99,132,0.5)',
+                  borderRadius: 4,
+                  color: 'white',
+                  font: {
+                      weight: 'bold',
+                      size:10
+                  },
+                  formatter: function(value){
+                      var people10k = Math.round(value * 0.0001);
+                      return people10k + "万人" ;
+                  },
+                  padding:1,
+                  anchor: 'end',
+                  clamp: true,
+                  align: 'end'
+              }
+          }
+      }
+  });
+  </script>
+
+
+  <canvas id="womenperChart" style="position: relative; height: 600px; max-width:800px; margin:auto;"></canvas>
+  <script>
+  var wptx = document.getElementById("womenperChart").getContext("2d");
+
+  var data = {
+      labels: ["共産党", "立憲民主党",  "無所属",  "公明党", "日本維新の会","自民党", "希望の党",  "社会民主党"],
+      datasets: [
+          {
+              label: "衆議院 党内女性議員割合(%)",
+              backgroundColor: 'rgba(255, 99, 132, 1.0)',
+              data: [25, 22.22, 19.23,13.79, 9.09,  7.12, 4, 0 ]
+          }
+      ]
+  };
+
+  var myBarChart = new Chart(wptx, {
+      type: 'horizontalBar',
+      data: data,
+      options: {
+          barValueSpacing: 50,
+          scales: {
+              xAxes: [{
+                  ticks: {
+                      min: 0,
+                      max: 50,
+                  }
+              }]
+          },
+          plugins: {
+              datalabels: {
+                  backgroundColor:'rgba(120,99,132,0.5)',
+                  borderRadius: 4,
+                  color: 'white',
+                  font: {
+                      weight: 'bold',
+                      size:10
+                  },
+                  formatter: function(value){
+                      return value + "%" ;
+                  },
+                  padding:1,
+                  anchor: 'end',
+                  clamp: true,
+                  align: 'end'
+              }
+          }
+
+
+      }
+  });
+  </script>
+
+
+  <canvas id="dietmemChart" style="position: relative; height: 1000px; max-width:800px; margin:auto;"></canvas>
+  <script>
+  var dtx = document.getElementById("dietmemChart").getContext("2d");
+
+  var data = {
+      labels: ["自民党", "立憲民主党", "無所属", "公明党", "共産党", "希望の党", "日本維新の会", "社会民主党" ],
+      datasets: [
+          {
+            label: "衆議院議席数-女性",
+            backgroundColor: 'rgba(255, 99, 132, 1.0)',
+            data: [20, 12, 5, 4,3,2,   1, 0 ]
+          },
+          {
+              label: "衆議院議席数-男性",
+              backgroundColor: 'rgba(132, 99, 255, 1.0)',
+              data: [261, 42, 21, 25, 9, 48, 10, 2 ]
+          },
+      ]
+  };
+
+  var myBarChart = new Chart(dtx, {
+      type: 'horizontalBar',
+      data: data,
+      options: {
+          barValueSpacing: 50,
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      min: 0,
+                  }
+              }]
+          },
+          plugins: {
+              datalabels: {
+                  backgroundColor:'rgba(120,99,132,0.5)',
+                  borderRadius: 4,
+                  color: 'white',
+                  font: {
+                      weight: 'bold',
+                      size:10
+                  },
+                  padding:1,
+                  anchor: 'end',
+                  clamp: true,
+                  align: 'end'
+              }
+          }
+
+
+      }
+  });
+  </script>
+ 
+
+
+
+        </main><footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">Sitemap</h5>
+          <ul class="site-footer-widget-links">
+            
+            <li><a href="http://example.org/">Home</a></li>
+            
+            <li><a href="http://example.org/portfolio">Data Source</a></li>
+            
+            <li><a href="http://example.org/contact">Contact</a></li>
+            
+            <li><a href="http://example.org/acton">Action</a></li>
+            
+          </ul>
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+</footer>
+
+
+<script src="http://example.org/js/formhandler.min.js"></script>
+
+<script src="http://example.org/js/vendor.min.js"></script>
+
+<script src="http://example.org/js/script.min.js"></script>
+</body>
+</html>
