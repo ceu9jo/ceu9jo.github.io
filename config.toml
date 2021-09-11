@@ -1,6 +1,6 @@
-baseURL       = "http://example.org/"
+baseURL       = "https://ceu9jo.github.io/"
 languageCode  = "en-us"
-title         = "Roxo | Creative Design Agency"
+title         = "stats.gender-gap.jp"
 theme         = "roxo"
 summarylength = 25
 publishDir = "docs"
