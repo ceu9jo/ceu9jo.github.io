@@ -18,7 +18,7 @@ publishDir = "docs"
     weight  = 2
   [[menu.nav]]
     name    = "Contact"
-    url     = "https://twitter.com/stats_gengap_jp"
+    url     = "https://twitter.com/StatsGenderGap"
     weight  = 3 
   [[menu.nav]]
     name    = "Action"
