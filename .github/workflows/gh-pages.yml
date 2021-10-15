@@ -26,7 +26,5 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/test/gha-workflow'
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./ docs
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./ docs
