@@ -75,11 +75,11 @@ publishDir = "docs"
           url  = ""
         [[params.footer.sitemap.link]]
           name = "Data Source"
-          url  = "portfolio"
+          url  = "source"
         [[params.footer.sitemap.link]]
           name = "Contact"
-          url  = "contact"
+          url  = "https://twitter.com/StatsGenderGap"
         [[params.footer.sitemap.link]]
           name = "Action"
-          url  = "acton"
+          url  = "action"
 
