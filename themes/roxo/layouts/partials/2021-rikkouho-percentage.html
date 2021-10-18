@@ -1,0 +1,51 @@
+  <canvas id="2021rikkouhoChart" style="position: relative; height: 600px; max-width:800px; margin:auto;"></canvas>
+  <script>
+  var rikkouho_tx = document.getElementById("2021rikkouhoChart").getContext("2d");
+
+  var data = {
+      labels: ["社会民主党", "共産党", "N党", "国民民主党",  "れいわ新撰組",  "立憲民主党",  "日本維新の会","自民党", "公明党"],
+      datasets: [
+          {
+              label: "2021衆院選 立候補者数党内女性割合(%)",
+              backgroundColor: 'rgba(255, 99, 132, 1.0)',
+              data: [60, 36.2, 33.3 , 30.8, 23.8,  18.3, 14.9, 9.7, 7.5]
+          }
+      ]
+  };
+var myBarChart = new Chart(rikkouho_tx, {
+      type: 'horizontalBar',
+      data: data,
+      options: {
+          barValueSpacing: 50,
+          scales: {
+              xAxes: [{
+                  ticks: {
+                      min: 0,
+                      max: 100,
+                  }
+              }]
+          },
+          plugins: {
+              datalabels: {
+                  backgroundColor:'rgba(120,99,132,0.5)',
+                  borderRadius: 4,
+                  color: 'white',
+                  font: {
+                      weight: 'bold',
+                      size:10
+                  },
+                  formatter: function(value){
+                      return value + "%" ;
+                  },
+                  padding:1,
+                  anchor: 'end',
+                  clamp: true,
+                  align: 'end'
+              }
+          }
+
+
+      }
+  });
+  </script>
+
