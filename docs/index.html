@@ -100,7 +100,7 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>    
 
-<canvas id="myChart" style="position: relative; height: 300px; max-width:800px; margin:auto; margin-top:100px;"></canvas>
+<canvas id="myChart" style="position: relative; height: 500px; max-width:500px; margin:auto; margin-top:100px;"></canvas>
     <script>
     var ctx = document.getElementById("myChart").getContext('2d');
     var element = document.getElementById("myChart")
@@ -110,7 +110,7 @@
             labels: ["2006", "2017", "2018", "2020", "2021"],
             datasets: [{
                 type: 'line',
-                label: '世界における日本のジェンダー順位（政治,156ヵ国中）',
+                label: '政治, 世界156ヵ国中',
                 data: [-83, -123, -125, -144, -147],
                 backgroundColor: 'rgba(255, 99, 132, 0.0)',
                 borderColor: 'rgba(255,99,132,1)',
@@ -119,6 +119,9 @@
             }]
         },
         options: {
+            legend: {
+                labels: {fontSize: 15}
+            },
             scales: {
                 yAxes: [{
                     ticks: {
@@ -128,6 +131,11 @@
                         }
                     }
                 }]
+            },
+            title: {
+                display: true,
+                text: '日本のジェンダー順位は世界でどのあたり？',
+                fontSize: 15
             },
             plugins: {
                 datalabels: {
@@ -148,7 +156,7 @@
     </script>
 
 
-  <canvas id="incomeChart" style="position: relative; height: 1200px; max-width:800px; margin:auto;"></canvas>
+  <canvas id="incomeChart" style="position: relative; height: 1500px; max-width:800px; margin:auto; margin-top:40px;"></canvas>
   <script>
   var itx = document.getElementById("incomeChart").getContext("2d");
 
@@ -157,12 +165,12 @@
       labels: ["1000万円-", "900万~1000万円", "800万~900万円", "700万~800万円", "600万~700万円", "500万~600万円", "400万~500万円", "300万~400万円", "200万~300万円", "100万~200万円", "~100万円"],
       datasets: [
           {
-              label: "年収分布(人数)-女性",
+              label: "女性",
               backgroundColor: 'rgba(255, 99, 132, 1.0)',
               data: [307000, 126800,275500,584500,1024300,1747100,3170900,5781500,11079500,14305500,13828400]
           },
           {
-              label: "年収分布(人数)-男性",
+              label: "男性",
               backgroundColor: 'rgba(132, 99, 255, 1.0)',
               data: [3628500,1527800,2405300,3746000,4823400,6752900,8935200,10767000,10953000,6204400,4146700]
           },
@@ -174,12 +182,20 @@
       type: 'horizontalBar',
       data: data,
       options: {
+          legend: {
+              labels: {fontSize: 15}
+          },
           barValueSpacing: 20,
           layout: {
               padding: {
                   left: 5,
                   right: 40
               }
+          },
+          title: {
+              display: true,
+              text: '男女の年収の違いは？',
+              fontSize: 15
           },
           scales: {
               yAxes: [
@@ -232,7 +248,7 @@
   </script>
 
 
-  <canvas id="2021rikkouhoChart" style="position: relative; height: 600px; max-width:800px; margin:auto;"></canvas>
+  <canvas id="2021rikkouhoChart" style="position: relative; height: 800px; max-width:800px; margin:auto; margin-top:40px;"></canvas>
   <script>
   var rikkouho_tx = document.getElementById("2021rikkouhoChart").getContext("2d");
 
@@ -240,7 +256,7 @@
       labels: ["社会民主党", "共産党", "N党", "国民民主党",  "れいわ新撰組",  "立憲民主党",  "日本維新の会","自民党", "公明党"],
       datasets: [
           {
-              label: "2021衆院選 立候補者数党内女性割合(%)",
+              label: "2021衆院選 党内女性割合(%)",
               backgroundColor: 'rgba(255, 99, 132, 1.0)',
               data: [60, 36.2, 33.3 , 30.8, 23.8,  18.3, 14.9, 9.7, 7.5]
           }
@@ -250,6 +266,9 @@ var myBarChart = new Chart(rikkouho_tx, {
       type: 'horizontalBar',
       data: data,
       options: {
+          legend: {
+              labels: {fontSize: 15}
+          },
           barValueSpacing: 50,
           scales: {
               xAxes: [{
@@ -258,6 +277,11 @@ var myBarChart = new Chart(rikkouho_tx, {
                       max: 100,
                   }
               }]
+          },
+          title: {
+              display: true,
+              text: '次の選挙(*), 女性の立候補者の割合は？',
+              fontSize: 15
           },
           plugins: {
               datalabels: {
@@ -284,7 +308,7 @@ var myBarChart = new Chart(rikkouho_tx, {
   </script>
 
 
-  <canvas id="womenperChart" style="position: relative; height: 600px; max-width:800px; margin:auto;"></canvas>
+  <canvas id="womenperChart" style="position: relative; height: 800px; max-width:800px; margin:auto; margin-top:40px;"></canvas>
   <script>
   var wptx = document.getElementById("womenperChart").getContext("2d");
 
@@ -303,6 +327,9 @@ var myBarChart = new Chart(rikkouho_tx, {
       type: 'horizontalBar',
       data: data,
       options: {
+          legend: {
+              labels: {fontSize: 15}
+          },
           barValueSpacing: 50,
           scales: {
               xAxes: [{
@@ -311,6 +338,11 @@ var myBarChart = new Chart(rikkouho_tx, {
                       max: 50,
                   }
               }]
+          },
+          title: {
+              display: true,
+              text: '現在(*)の衆議院, 党での女性議員割合は？',
+              fontSize: 15
           },
           plugins: {
               datalabels: {
@@ -337,7 +369,7 @@ var myBarChart = new Chart(rikkouho_tx, {
   </script>
 
 
-  <canvas id="dietmemChart" style="position: relative; height: 1000px; max-width:800px; margin:auto;"></canvas>
+  <canvas id="dietmemChart" style="position: relative; height: 1200px; max-width:800px; margin:auto; margin-top:40px;"></canvas>
   <script>
   var dtx = document.getElementById("dietmemChart").getContext("2d");
 
@@ -345,12 +377,12 @@ var myBarChart = new Chart(rikkouho_tx, {
       labels: ["自民党", "立憲民主党", "無所属", "公明党", "共産党", "希望の党", "日本維新の会", "社会民主党" ],
       datasets: [
           {
-            label: "衆議院議席数-女性",
+            label: "女性",
             backgroundColor: 'rgba(255, 99, 132, 1.0)',
             data: [20, 12, 5, 4,3,2,   1, 0 ]
           },
           {
-              label: "衆議院議席数-男性",
+              label: "男性",
               backgroundColor: 'rgba(132, 99, 255, 1.0)',
               data: [261, 42, 21, 25, 9, 48, 10, 2 ]
           },
@@ -361,6 +393,9 @@ var myBarChart = new Chart(rikkouho_tx, {
       type: 'horizontalBar',
       data: data,
       options: {
+          legend: {
+              labels: {fontSize: 15}
+          },
           barValueSpacing: 50,
           scales: {
               yAxes: [{
@@ -368,6 +403,11 @@ var myBarChart = new Chart(rikkouho_tx, {
                       min: 0,
                   }
               }]
+          },
+          title: {
+              display: true,
+              text: '現在(*)の衆議院,男女議席数は？',
+              fontSize: 15
           },
           plugins: {
               datalabels: {
@@ -389,7 +429,7 @@ var myBarChart = new Chart(rikkouho_tx, {
       }
   });
   </script>
- 
+<font size="2">(*)いずれも2021/10/17時点の文言になります.</font>
 
 
 
