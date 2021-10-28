@@ -1,4 +1,4 @@
-  <canvas id="womenperChart" style="position: relative; height: 600px; max-width:800px; margin:auto;"></canvas>
+  <canvas id="womenperChart" style="position: relative; height: 800px; max-width:800px; margin:auto; margin-top:40px;"></canvas>
   <script>
   var wptx = document.getElementById("womenperChart").getContext("2d");
 
@@ -17,6 +17,9 @@
       type: 'horizontalBar',
       data: data,
       options: {
+          legend: {
+              labels: {fontSize: 15}
+          },
           barValueSpacing: 50,
           scales: {
               xAxes: [{
@@ -25,6 +28,11 @@
                       max: 50,
                   }
               }]
+          },
+          title: {
+              display: true,
+              text: '現在の衆議院, 党での女性議員割合は？',
+              fontSize: 15
           },
           plugins: {
               datalabels: {

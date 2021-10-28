@@ -1,4 +1,4 @@
-  <canvas id="dietmemChart" style="position: relative; height: 1000px; max-width:800px; margin:auto;"></canvas>
+  <canvas id="dietmemChart" style="position: relative; height: 1200px; max-width:800px; margin:auto; margin-top:40px;"></canvas>
   <script>
   var dtx = document.getElementById("dietmemChart").getContext("2d");
 
@@ -6,12 +6,12 @@
       labels: ["自民党", "立憲民主党", "無所属", "公明党", "共産党", "希望の党", "日本維新の会", "社会民主党" ],
       datasets: [
           {
-            label: "衆議院議席数-女性",
+            label: "女性",
             backgroundColor: 'rgba(255, 99, 132, 1.0)',
             data: [20, 12, 5, 4,3,2,   1, 0 ]
           },
           {
-              label: "衆議院議席数-男性",
+              label: "男性",
               backgroundColor: 'rgba(132, 99, 255, 1.0)',
               data: [261, 42, 21, 25, 9, 48, 10, 2 ]
           },
@@ -22,6 +22,9 @@
       type: 'horizontalBar',
       data: data,
       options: {
+          legend: {
+              labels: {fontSize: 15}
+          },
           barValueSpacing: 50,
           scales: {
               yAxes: [{
@@ -29,6 +32,11 @@
                       min: 0,
                   }
               }]
+          },
+          title: {
+              display: true,
+              text: '現在の衆議院の男女議席数は？',
+              fontSize: 15
           },
           plugins: {
               datalabels: {
