@@ -1,4 +1,4 @@
-  <canvas id="incomeChart" style="position: relative; height: 1200px; max-width:800px; margin:auto;"></canvas>
+  <canvas id="incomeChart" style="position: relative; height: 1500px; max-width:800px; margin:auto; margin-top:40px;"></canvas>
   <script>
   var itx = document.getElementById("incomeChart").getContext("2d");
 
@@ -7,12 +7,12 @@
       labels: ["1000万円-", "900万~1000万円", "800万~900万円", "700万~800万円", "600万~700万円", "500万~600万円", "400万~500万円", "300万~400万円", "200万~300万円", "100万~200万円", "~100万円"],
       datasets: [
           {
-              label: "年収分布(人数)-女性",
+              label: "女性",
               backgroundColor: 'rgba(255, 99, 132, 1.0)',
               data: [307000, 126800,275500,584500,1024300,1747100,3170900,5781500,11079500,14305500,13828400]
           },
           {
-              label: "年収分布(人数)-男性",
+              label: "男性",
               backgroundColor: 'rgba(132, 99, 255, 1.0)',
               data: [3628500,1527800,2405300,3746000,4823400,6752900,8935200,10767000,10953000,6204400,4146700]
           },
@@ -24,12 +24,20 @@
       type: 'horizontalBar',
       data: data,
       options: {
+          legend: {
+              labels: {fontSize: 15}
+          },
           barValueSpacing: 20,
           layout: {
               padding: {
                   left: 5,
                   right: 40
               }
+          },
+          title: {
+              display: true,
+              text: '男女の年収の違いは？',
+              fontSize: 15
           },
           scales: {
               yAxes: [
