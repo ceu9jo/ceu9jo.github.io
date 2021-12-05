@@ -18,5 +18,5 @@ https://www.e-stat.go.jp/dbview?sid=0003222466
 ##### 衆議院議席数
 
 届出政党等別男女別新前元別当選人数（小選挙区、比例代表）  
-https://www.soumu.go.jp/senkyo/senkyo_s/data/shugiin48/index.html
+https://www.soumu.go.jp/senkyo/senkyo_s/data/shugiin49/index.html
 
