@@ -5,6 +5,12 @@ theme         = "roxo"
 summarylength = 25
 publishDir = "docs"
 
+# Markup Options
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 # Site Menus
 [menu]
   # Navbar Menus
