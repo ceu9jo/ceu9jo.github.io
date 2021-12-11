@@ -5,7 +5,7 @@ heading       : "action to change the gap."
 form_heading  : "TELL US YOUR VOICE"
 ---
 
-##### 選挙へいこう！ - 2021衆院選
+##### 選挙へいこう！ - 2022参院選
 https://mezase75.jp  
 https://go2senkyo.com/
 
