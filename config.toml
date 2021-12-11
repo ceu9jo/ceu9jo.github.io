@@ -7,6 +7,9 @@ publishDir = "docs"
 
 # Markup Options
 [markup]
+  defaultMarkdownHandler = 'blackFriday'
+  [markup.blackFriday]
+    hrefTargetBlank = true
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
