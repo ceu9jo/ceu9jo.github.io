@@ -23,7 +23,7 @@ jobs:
 
       - name: Build
         env:
-          TEST_MSG: ${{ secrets.SECRET_MSG}}
+          API_URL: ${{ secrets.GHA_API_URL}}
         run: hugo --minify
 
       - name: Deploy
