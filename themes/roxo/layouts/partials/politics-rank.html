@@ -5,7 +5,6 @@
 
 <canvas id="myChart" style="position: relative; height: 500px; max-width:500px; margin:auto; margin-top:100px;"></canvas>
     <script>
-    var url = {{ $url }};
     var dataj = {{ $dataJ }};
     var years = dataj.map((obj) => obj.西暦).filter(word => word != null);
     var rank = dataj.map((obj) => obj.順位).filter(word => word != null);
