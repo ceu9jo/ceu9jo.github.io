@@ -7,7 +7,7 @@ publishDir = "docs"
 
 # Markup Options
 [markup]
-  defaultMarkdownHandler = 'blackFriday'
+  defaultMarkdownHandler = 'goldmark'
   [markup.blackFriday]
     hrefTargetBlank = true
   [markup.goldmark]
