@@ -20,7 +20,7 @@ publishDir = "docs"
     allow = ['^dart-sass-embedded$', '^go$', '^npx$', '^postcss$']
     osEnv = ['(?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM)$']
   [security.funcs]
-    getenv = ['^TEST_MSG_']
+    getenv = ['TEST_MSG']
   [security.http]
     methods = ['(?i)GET|POST']
     urls = ['.*']
