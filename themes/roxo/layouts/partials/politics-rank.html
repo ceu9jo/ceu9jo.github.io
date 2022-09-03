@@ -8,9 +8,7 @@
     var url = {{ $url }};
     var dataj = {{ $dataJ }};
     var years = dataj.map((obj) => obj.西暦).filter(word => word != null);
-    years = years.reverse();
     var rank = dataj.map((obj) => obj.順位).filter(word => word != null);
-    rank = rank.reverse();
     rank = rank.map((obj) => obj * -1);
 
     var ctx = document.getElementById("myChart").getContext('2d');
