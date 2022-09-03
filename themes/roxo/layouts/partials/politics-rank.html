@@ -8,7 +8,8 @@
     var url = {{ $url }};
     var dataj = {{ $dataJ }};
     var years = dataj.map((obj) => obj.西暦).filter(word => word != null);
-    years = years.reverse();
+    var rank = dataj.map((obj) => obj.順位).filter(word => word != null);
+    rank = rank.map((obj) => obj * -1);
 
     var ctx = document.getElementById("myChart").getContext('2d');
     var element = document.getElementById("myChart")
@@ -19,7 +20,7 @@
             datasets: [{
                 type: 'line',
                 label: '政治, 世界156ヵ国中',
-                data: [-83, -123, -125, -144, -147],
+                data: rank,
                 backgroundColor: 'rgba(255, 99, 132, 0.0)',
                 borderColor: 'rgba(255,99,132,1)',
                 borderWidth: 1,
