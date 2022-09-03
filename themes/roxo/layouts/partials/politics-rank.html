@@ -9,9 +9,6 @@
     var dataj = {{ $dataJ }};
     var years = dataj.map((obj) => obj.西暦).filter(word => word != null);
     years = years.reverse();
-    console.log(dataj);
-    console.log(years);
-    console.log(url);
 
     var ctx = document.getElementById("myChart").getContext('2d');
     var element = document.getElementById("myChart")
