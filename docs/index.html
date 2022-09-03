@@ -1,7 +1,412 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><title>stats.gender-gap.jp</title><meta name=viewport content="width=device-width,initial-scale=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta name=author content="hello cool..."><meta name=generator content="Hugo 0.84.0"><link rel=stylesheet href=https://stats.gender-gap.jp/css/bootstrap.min.css><link rel=stylesheet href=https://stats.gender-gap.jp/font-awesome/css/font-awesome.min.css><link href=https://stats.gender-gap.jp/scss/style.min.css rel=stylesheet><link rel="shortcut icon" href=https://stats.gender-gap.jp/images/favicon.png type=image/x-icon><link rel=icon href=https://stats.gender-gap.jp/images/favicon.ico type=image/x-icon><meta property="og:title" content="stats.gender-gap.jp"><meta property="og:description" content="日本のジェンダー格差統計"><meta property="og:type" content="website"><meta property="og:url" content="https://stats.gender-gap.jp/"><meta property="og:image" content="https://stats.gender-gap.jp/images/ogp-header.png"></head><body><nav class="navbar navbar-expand-lg site-navigation"><div class=container><a class=navbar-brand href=https://stats.gender-gap.jp/><img src=https://stats.gender-gap.jp/images/logo.png alt=logo></a>
-<button class="navbar-toggler collapsed" type=button data-toggle=collapse data-target=#sitenavbar>
-<span class=icon-bar></span><span class=icon-bar></span><span class=icon-bar></span></button><div class="collapse navbar-collapse" id=sitenavbar><ul class="navbar-nav ml-auto main-nav"><li class=nav-item><a class=nav-link href=https://stats.gender-gap.jp/>Home</a></li><li class=nav-item><a class=nav-link href=https://stats.gender-gap.jp/source>Data source</a></li><li class=nav-item><a class=nav-link href=https://twitter.com/StatsGenderGap>Contact</a></li><li class=nav-item><a class="nav-link btn btn-sm btn-primary btn-sm-rounded" href=https://stats.gender-gap.jp/action><span class=btn-area><span data-text=Action>Action</span></span></a></li></ul></div></div></nav><main><script src=https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js></script><script src=https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0></script><canvas id=myChart style=position:relative;height:500px;max-width:500px;margin:auto;margin-top:100px></canvas>
-<script>var msg="hellohello",ctx,element,myChart;console.log(msg),ctx=document.getElementById("myChart").getContext('2d'),element=document.getElementById("myChart"),myChart=new Chart(ctx,{type:'bar',data:{labels:["2006","2017","2018","2020","2021"],datasets:[{type:'line',label:'政治, 世界156ヵ国中',data:[-83,-123,-125,-144,-147],backgroundColor:'rgba(255, 99, 132, 0.0)',borderColor:'rgba(255,99,132,1)',borderWidth:1,lineTension:0}]},options:{legend:{labels:{fontSize:15}},scales:{yAxes:[{ticks:{beginAtZero:!0,callback:function(a,b,c){return-1*a}}}]},title:{display:!0,text:'日本のジェンダー順位は世界でどのあたり？',fontSize:15},plugins:{datalabels:{backgroundColor:'rgba(255,99,132,1.0)',borderRadius:4,color:'white',font:{weight:'bold'},formatter:function(a){return a*-1},padding:6}}}})</script><canvas id=incomeChart style=position:relative;height:1500px;max-width:800px;margin:auto;margin-top:40px></canvas>
-<script>var itx=document.getElementById("incomeChart").getContext("2d"),data={labels:["1000万円-","900万~1000万円","800万~900万円","700万~800万円","600万~700万円","500万~600万円","400万~500万円","300万~400万円","200万~300万円","100万~200万円","~100万円"],datasets:[{label:"女性",backgroundColor:'rgba(255, 99, 132, 1.0)',data:[307e3,126800,275500,584500,1024300,1747100,3170900,5781500,11079500,14305500,13828400]},{label:"男性",backgroundColor:'rgba(132, 99, 255, 1.0)',data:[3628500,1527800,2405300,3746e3,4823400,6752900,8935200,10767e3,10953e3,6204400,4146700]}]},myBarChart=new Chart(itx,{type:'horizontalBar',data,options:{legend:{labels:{fontSize:15}},barValueSpacing:20,layout:{padding:{left:5,right:40}},title:{display:!0,text:'男女の年収の違いは？',fontSize:15},scales:{yAxes:[{display:!0,position:'left',align:'start',ticks:{min:0,fontSize:10,padding:0}}],xAxes:[{display:!0,position:'top',ticks:{min:0,callback:function(a,c,d){var b=a*1e-4;return b+"万人"}}}]},plugins:{datalabels:{backgroundColor:'rgba(120,99,132,0.5)',borderRadius:4,color:'white',font:{weight:'bold',size:10},formatter:function(a){var b=Math.round(a*1e-4);return b+"万人"},padding:1,anchor:'end',clamp:!0,align:'end'}}}})</script><canvas id=womenperChart style=position:relative;height:800px;max-width:800px;margin:auto;margin-top:40px></canvas>
-<script>var wptx=document.getElementById("womenperChart").getContext("2d"),data={labels:["れいわ新撰組","共産党","立憲民主党","公明党","日本維新の会","国民民主党","自民党","社会民主党","無所属"],datasets:[{label:"衆議院 党内女性議員割合(%)",backgroundColor:'rgba(255, 99, 132, 1.0)',data:[33.33,20,13.54,12.5,9.76,9.09,7.72,0,0]}]},myBarChart=new Chart(wptx,{type:'horizontalBar',data,options:{legend:{labels:{fontSize:15}},barValueSpacing:50,scales:{xAxes:[{ticks:{min:0,max:50}}]},title:{display:!0,text:'現在(*)の衆議院, 党での女性議員割合は？',fontSize:15},plugins:{datalabels:{backgroundColor:'rgba(120,99,132,0.5)',borderRadius:4,color:'white',font:{weight:'bold',size:10},formatter:function(a){return a+"%"},padding:1,anchor:'end',clamp:!0,align:'end'}}}})</script><canvas id=dietmemChart style=position:relative;height:1200px;max-width:800px;margin:auto;margin-top:40px></canvas>
-<script>var dtx=document.getElementById("dietmemChart").getContext("2d"),data={labels:["自民党","立憲民主党","公明党","日本維新の会","共産党","国民民主党","れいわ新撰組","社会民主党","無所属"],datasets:[{label:"女性",backgroundColor:'rgba(255, 99, 132, 1.0)',data:[20,13,4,4,2,1,1,0,0]},{label:"男性",backgroundColor:'rgba(132, 99, 255, 1.0)',data:[239,83,28,37,8,10,2,1,12]}]},myBarChart=new Chart(dtx,{type:'horizontalBar',data,options:{legend:{labels:{fontSize:15}},barValueSpacing:50,scales:{yAxes:[{ticks:{min:0}}]},title:{display:!0,text:'現在(*)の衆議院,男女議席数は？',fontSize:15},plugins:{datalabels:{backgroundColor:'rgba(120,99,132,0.5)',borderRadius:4,color:'white',font:{weight:'bold',size:10},padding:1,anchor:'end',clamp:!0,align:'end'}}}})</script><font size=2>(*)いずれも2021/12/06時点の文言になります.</font></main><footer class=site-footer><div class=container><div class=row><div class=col-md-6><div class=site-footer-widget><h5 class=site-footer-widget-title>Sitemap</h5><ul class=site-footer-widget-links><li><a href=https://stats.gender-gap.jp/>Home</a></li><li><a href=https://stats.gender-gap.jp/source>Data Source</a></li><li><a href=https://twitter.com/StatsGenderGap>Contact</a></li><li><a href=https://stats.gender-gap.jp/action>Action</a></li></ul></div></div></div></div></footer><script src=https://stats.gender-gap.jp/js/formhandler.min.js></script><script src=https://stats.gender-gap.jp/js/vendor.min.js></script><script src=https://stats.gender-gap.jp/js/script.min.js></script></body></html>
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="utf-8" />
+  <title>stats.gender-gap.jp</title>
+
+  <!-- mobile responsive meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  
+  <meta name="author" content="hello cool...">
+  
+  <meta name="generator" content="Hugo 0.84.0" />
+
+  <!-- Bootstrap -->
+  
+  <link rel="stylesheet" href="https://stats.gender-gap.jp/css/bootstrap.min.css" />
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://stats.gender-gap.jp/font-awesome/css/font-awesome.min.css" />
+  <!-- Main Stylesheets -->
+  
+  <link href="https://stats.gender-gap.jp/scss/style.min.css" rel="stylesheet" />
+
+  
+  <link rel="shortcut icon" href="https://stats.gender-gap.jp/images/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="https://stats.gender-gap.jp/images/favicon.ico" type="image/x-icon" />
+  
+  <meta property="og:title" content="stats.gender-gap.jp" />
+<meta property="og:description" content="日本のジェンダー格差統計" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://stats.gender-gap.jp/" /><meta property="og:image" content="https://stats.gender-gap.jp/images/ogp-header.png"/>
+
+
+</head>
+<body><nav class="navbar navbar-expand-lg site-navigation">
+  <div class="container">
+    <a class="navbar-brand" href="https://stats.gender-gap.jp/">
+      <img src="https://stats.gender-gap.jp/images/logo.png" alt="logo"/>
+    </a>
+    <button
+      class="navbar-toggler collapsed"
+      type="button"
+      data-toggle="collapse"
+      data-target="#sitenavbar"
+    >
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="sitenavbar">
+      <ul class="navbar-nav ml-auto main-nav">
+         
+         
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://stats.gender-gap.jp/"
+              >Home</a
+            >
+          </li>
+           
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://stats.gender-gap.jp/source"
+              >Data source</a
+            >
+          </li>
+           
+         
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://twitter.com/StatsGenderGap"
+              >Contact</a
+            >
+          </li>
+           
+         
+          
+          <li class="nav-item">
+            <a
+              class="nav-link btn btn-sm btn-primary btn-sm-rounded"
+              href="https://stats.gender-gap.jp/action"
+            >
+              <span class="btn-area">
+                <span data-text="Action">
+                  Action
+                </span>
+              </span>
+            </a>
+          </li>
+           
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+<main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>    
+
+<canvas id="myChart" style="position: relative; height: 500px; max-width:500px; margin:auto; margin-top:100px;"></canvas>
+    <script>
+    var msg = "hellohello";
+    console.log(msg);
+    var ctx = document.getElementById("myChart").getContext('2d');
+    var element = document.getElementById("myChart")
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ["2006", "2017", "2018", "2020", "2021"],
+            datasets: [{
+                type: 'line',
+                label: '政治, 世界156ヵ国中',
+                data: [-83, -123, -125, -144, -147],
+                backgroundColor: 'rgba(255, 99, 132, 0.0)',
+                borderColor: 'rgba(255,99,132,1)',
+                borderWidth: 1,
+                lineTension: 0
+            }]
+        },
+        options: {
+            legend: {
+                labels: {fontSize: 15}
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero:true,
+                        callback: function(value, index, values) {
+                            return -1 * value;
+                        }
+                    }
+                }]
+            },
+            title: {
+                display: true,
+                text: '日本のジェンダー順位は世界でどのあたり？',
+                fontSize: 15
+            },
+            plugins: {
+                datalabels: {
+                    backgroundColor:'rgba(255,99,132,1.0)',
+                    borderRadius: 4,
+                    color: 'white',
+                    font: {
+                        weight: 'bold'
+                    },
+                    formatter: function(value){
+                        return value * -1;
+                    },
+                    padding: 6
+                }
+            }
+        }
+    });
+    </script>
+
+
+  <canvas id="incomeChart" style="position: relative; height: 1500px; max-width:800px; margin:auto; margin-top:40px;"></canvas>
+  <script>
+  var itx = document.getElementById("incomeChart").getContext("2d");
+
+  var data = {
+      
+      labels: ["1000万円-", "900万~1000万円", "800万~900万円", "700万~800万円", "600万~700万円", "500万~600万円", "400万~500万円", "300万~400万円", "200万~300万円", "100万~200万円", "~100万円"],
+      datasets: [
+          {
+              label: "女性",
+              backgroundColor: 'rgba(255, 99, 132, 1.0)',
+              data: [307000, 126800,275500,584500,1024300,1747100,3170900,5781500,11079500,14305500,13828400]
+          },
+          {
+              label: "男性",
+              backgroundColor: 'rgba(132, 99, 255, 1.0)',
+              data: [3628500,1527800,2405300,3746000,4823400,6752900,8935200,10767000,10953000,6204400,4146700]
+          },
+
+      ]
+  };
+
+  var myBarChart = new Chart(itx, {
+      type: 'horizontalBar',
+      data: data,
+      options: {
+          legend: {
+              labels: {fontSize: 15}
+          },
+          barValueSpacing: 20,
+          layout: {
+              padding: {
+                  left: 5,
+                  right: 40
+              }
+          },
+          title: {
+              display: true,
+              text: '男女の年収の違いは？',
+              fontSize: 15
+          },
+          scales: {
+              yAxes: [
+                  {
+                      display: true,
+                      position: 'left',
+                      align: 'start',
+                      ticks: {
+                          min: 0,
+                          fontSize:10,
+                          padding:0
+                      }
+                  }
+              ],
+              xAxes: [
+                  {
+                      display: true,
+                      position: 'top',
+                      ticks: {
+                          min: 0,
+                          callback: function(value, index, values) {
+                              var people10k = value * 0.0001;
+                              return people10k + "万人" ;
+                          }
+                     }
+                  }
+              ]
+          },
+          plugins: {
+              datalabels: {
+                  backgroundColor:'rgba(120,99,132,0.5)',
+                  borderRadius: 4,
+                  color: 'white',
+                  font: {
+                      weight: 'bold',
+                      size:10
+                  },
+                  formatter: function(value){
+                      var people10k = Math.round(value * 0.0001);
+                      return people10k + "万人" ;
+                  },
+                  padding:1,
+                  anchor: 'end',
+                  clamp: true,
+                  align: 'end'
+              }
+          }
+      }
+  });
+  </script>
+
+
+  <canvas id="womenperChart" style="position: relative; height: 800px; max-width:800px; margin:auto; margin-top:40px;"></canvas>
+  <script>
+  var wptx = document.getElementById("womenperChart").getContext("2d");
+
+  var data = {
+      labels: ["れいわ新撰組", "共産党", "立憲民主党", "公明党", "日本維新の会", "国民民主党", "自民党",  "社会民主党", "無所属" ],
+      datasets: [
+          {
+              label: "衆議院 党内女性議員割合(%)",
+              backgroundColor: 'rgba(255, 99, 132, 1.0)',
+              data: [33.33, 20, 13.54, 12.50, 9.76, 9.09, 7.72, 0, 0 ]
+          }
+      ]
+  };
+
+  var myBarChart = new Chart(wptx, {
+      type: 'horizontalBar',
+      data: data,
+      options: {
+          legend: {
+              labels: {fontSize: 15}
+          },
+          barValueSpacing: 50,
+          scales: {
+              xAxes: [{
+                  ticks: {
+                      min: 0,
+                      max: 50,
+                  }
+              }]
+          },
+          title: {
+              display: true,
+              text: '現在(*)の衆議院, 党での女性議員割合は？',
+              fontSize: 15
+          },
+          plugins: {
+              datalabels: {
+                  backgroundColor:'rgba(120,99,132,0.5)',
+                  borderRadius: 4,
+                  color: 'white',
+                  font: {
+                      weight: 'bold',
+                      size:10
+                  },
+                  formatter: function(value){
+                      return value + "%" ;
+                  },
+                  padding:1,
+                  anchor: 'end',
+                  clamp: true,
+                  align: 'end'
+              }
+          }
+
+
+      }
+  });
+  </script>
+
+
+  <canvas id="dietmemChart" style="position: relative; height: 1200px; max-width:800px; margin:auto; margin-top:40px;"></canvas>
+  <script>
+  var dtx = document.getElementById("dietmemChart").getContext("2d");
+
+  var data = {
+      labels: ["自民党", "立憲民主党", "公明党", "日本維新の会", "共産党", "国民民主党", "れいわ新撰組", "社会民主党", "無所属" ],
+      datasets: [
+          {
+            label: "女性",
+            backgroundColor: 'rgba(255, 99, 132, 1.0)',
+            data: [20, 13, 4, 4, 2, 1, 1, 0, 0]
+          },
+          {
+              label: "男性",
+              backgroundColor: 'rgba(132, 99, 255, 1.0)',
+              data: [239, 83, 28, 37, 8, 10, 2, 1, 12 ]
+          },
+      ]
+  };
+
+  var myBarChart = new Chart(dtx, {
+      type: 'horizontalBar',
+      data: data,
+      options: {
+          legend: {
+              labels: {fontSize: 15}
+          },
+          barValueSpacing: 50,
+          scales: {
+              yAxes: [{
+                  ticks: {
+                      min: 0,
+                  }
+              }]
+          },
+          title: {
+              display: true,
+              text: '現在(*)の衆議院,男女議席数は？',
+              fontSize: 15
+          },
+          plugins: {
+              datalabels: {
+                  backgroundColor:'rgba(120,99,132,0.5)',
+                  borderRadius: 4,
+                  color: 'white',
+                  font: {
+                      weight: 'bold',
+                      size:10
+                  },
+                  padding:1,
+                  anchor: 'end',
+                  clamp: true,
+                  align: 'end'
+              }
+          }
+
+
+      }
+  });
+  </script>
+<font size="2">(*)いずれも2021/12/06時点の文言になります.</font>
+
+
+
+        </main><footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-md-6">
+        <div class="site-footer-widget">
+          <h5 class="site-footer-widget-title">Sitemap</h5>
+          <ul class="site-footer-widget-links">
+            
+            <li><a href="https://stats.gender-gap.jp/">Home</a></li>
+            
+            <li><a href="https://stats.gender-gap.jp/source">Data Source</a></li>
+            
+            <li><a href="https://twitter.com/StatsGenderGap">Contact</a></li>
+            
+            <li><a href="https://stats.gender-gap.jp/action">Action</a></li>
+            
+          </ul>
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://stats.gender-gap.jp/js/formhandler.min.js"></script>
+
+<script src="https://stats.gender-gap.jp/js/vendor.min.js"></script>
+
+<script src="https://stats.gender-gap.jp/js/script.min.js"></script>
+</body>
+</html>
