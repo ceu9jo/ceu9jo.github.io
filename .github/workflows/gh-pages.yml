@@ -22,6 +22,7 @@ jobs:
           # extended: true
 
       - name: Build
+        uses: peaceiris/actions-hugo@v2
         env:
           TEST_MSG: ${{ secrets.SECRET_MSG}}
         run: hugo --minify
