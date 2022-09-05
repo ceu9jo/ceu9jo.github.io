@@ -5,8 +5,6 @@
   var dataj = {{ $dataJ }};
   var parties = dataj.map((obj) => obj.衆議院ー政党).filter(word => word != null);
   var per_women = dataj.map((obj) => obj.衆議院ー女性割合 * 100).slice(0, parties.length);
-  console.log(parties);
-  console.log(per_women);
 
   var wptx = document.getElementById("womenperChart").getContext("2d");
 
