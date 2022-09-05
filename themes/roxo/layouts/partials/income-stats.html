@@ -1,20 +1,26 @@
+{{ $url := os.Getenv "API_URL"}}
+{{ $dataJ := getJSON $url }}  
+
   <canvas id="incomeChart" style="position: relative; height: 1500px; max-width:800px; margin:auto; margin-top:40px;"></canvas>
   <script>
+  var dataj = {{ $dataJ }};
+  var incomes = dataj.map((obj) => obj.年収レンジ).filter(word => word != null);
+  var income_women_num = dataj.map((obj) => obj.年収ー女性人数).filter(word => word != null);
+  var income_men_num = dataj.map((obj) => obj.年収ー男性人数).filter(word => word != null);
   var itx = document.getElementById("incomeChart").getContext("2d");
 
   var data = {
-      // labels: ["1000万円-", "900万~1000万円", "800万~900万円", "700万~800万円", "600万~700万円", "500万~600万円", "400万~500万円", "300万~400万円", "200万~300万円", "100万~200万円", "~100万円"],
-      labels: ["1000万円-", "900万~1000万円", "800万~900万円", "700万~800万円", "600万~700万円", "500万~600万円", "400万~500万円", "300万~400万円", "200万~300万円", "100万~200万円", "~100万円"],
+      labels: incomes,
       datasets: [
           {
               label: "女性",
               backgroundColor: 'rgba(255, 99, 132, 1.0)',
-              data: [307000, 126800,275500,584500,1024300,1747100,3170900,5781500,11079500,14305500,13828400]
+              data: income_women_num
           },
           {
               label: "男性",
               backgroundColor: 'rgba(132, 99, 255, 1.0)',
-              data: [3628500,1527800,2405300,3746000,4823400,6752900,8935200,10767000,10953000,6204400,4146700]
+              data: income_men_num
           },
 
       ]
