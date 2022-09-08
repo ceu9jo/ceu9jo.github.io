@@ -11,6 +11,9 @@
     <loc>https://stats.gender-gap.jp/</loc>
     <lastmod>2019-12-23T20:17:01+06:00</lastmod>
   </url><url>
+    <loc>https://stats.gender-gap.jp/global_reports/</loc>
+    <priority>0</priority>
+  </url><url>
     <loc>https://stats.gender-gap.jp/categories/</loc>
   </url><url>
     <loc>https://stats.gender-gap.jp/tags/</loc>
