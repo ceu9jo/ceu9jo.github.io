@@ -20,3 +20,8 @@ https://www.e-stat.go.jp/dbview?sid=0003222466
 届出政党等別男女別新前元別当選人数（小選挙区、比例代表）  
 https://www.soumu.go.jp/senkyo/senkyo_s/data/shugiin49/index.html
 
+##### 参議院議席数 
+
+参議院 会派別所属議員数  
+https://www.sangiin.go.jp/japanese/joho1/kousei/giin/204/giinsu.htm
+

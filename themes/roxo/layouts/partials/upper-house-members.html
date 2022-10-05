@@ -1,11 +1,11 @@
 {{ $url := os.Getenv "API_URL"}}
 {{ $dataJ := getJSON $url }}
-  <canvas id="dietmemChart" style="position: relative; height: 70vh; max-width:95vw; margin:auto; margin-top:40px;"></canvas>
+  <canvas id="UpperDietmemChart" style="position: relative; height: 140vh; max-width:800px; margin:auto; margin-top:40px;"></canvas>
   <script>
-  var dtx = document.getElementById("dietmemChart").getContext("2d");
+  var dtx = document.getElementById("UpperDietmemChart").getContext("2d");
 
     var dataj = {{ $dataJ }};
-    var params = dataj.map((obj) => [obj.衆議院ー政党, obj.衆議院ー女性, obj.衆議院ー男性]).filter(word => word[0]!= null);
+    var params = dataj.map((obj) => [obj.参議院ー政党, obj.参議院ー女性, obj.参議院ー男性]).filter(word => word[0]!= null);
     params.sort(function(a,b){return(b[1] - a[1]);});
     var parties = params.map((obj) => obj[0]);
     var women_num = params.map((obj) => obj[1]);
@@ -44,7 +44,7 @@
           },
           title: {
               display: true,
-              text: '現在(*1)の衆議院,男女議席数は？',
+              text: '現在(*2)の参議院,男女議席数は？',
               fontSize: 15
           },
           plugins: {
@@ -62,6 +62,10 @@
                   align: 'top'
               }
           }
+
+
       }
   });
   </script>
+<font size="2">(*1)いずれも2021/12/06時点の文言になります.</font><br>
+<font size="2">(*2)いずれも2021/10/03時点の文言になります.</font>
